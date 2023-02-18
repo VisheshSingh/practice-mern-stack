@@ -4,12 +4,10 @@ const workoutReducer = (state, action) => {
   switch (action.type) {
     case 'SET_WORKOUTS':
       return {
-        ...state,
         workouts: action.payload,
       };
     case 'CREATE_WORKOUT':
       return {
-        ...state,
         workouts: [action.payload, ...state.workouts],
       };
     default:

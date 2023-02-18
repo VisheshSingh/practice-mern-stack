@@ -19,13 +19,16 @@ const Home = () => {
     };
 
     fetchWorkouts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className='home'>
       <div className='workouts'>
         {workouts &&
-          workouts.map((workout) => <WorkoutDetails workout={workout} />)}
+          workouts.map((workout) => (
+            <WorkoutDetails key={workout._id} workout={workout} />
+          ))}
       </div>
       <WorkoutForm />
     </div>
