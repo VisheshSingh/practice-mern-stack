@@ -16,6 +16,9 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: 'DELETE_WORKOUT', payload: id });
     }
   };
+  const selectCurrentWorkout = (id) => {
+    dispatch({ type: 'SELECT_WORKOUT', payload: id });
+  };
   return (
     <div className='workout-details'>
       <h4>{workout.title}</h4>
@@ -26,12 +29,21 @@ const WorkoutDetails = ({ workout }) => {
         <strong>Load:</strong> {workout.load} Kgs
       </p>
       <p>{new Date(workout.createdAt).toLocaleString()}</p>
-      <span
-        className='material-symbols-outlined'
-        onClick={() => handleDelete(workout._id)}
-      >
-        delete
-      </span>
+
+      <div className='action-btns'>
+        <span
+          className='material-symbols-outlined'
+          onClick={() => selectCurrentWorkout(workout._id)}
+        >
+          edit
+        </span>
+        <span
+          className='material-symbols-outlined'
+          onClick={() => handleDelete(workout._id)}
+        >
+          delete
+        </span>
+      </div>
     </div>
   );
 };
