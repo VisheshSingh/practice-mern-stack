@@ -4,8 +4,12 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventdefault();
+  };
+
   return (
-    <form className='login'>
+    <form className='login' onSubmit={handleSubmit}>
       <h3>Login</h3>
 
       <label>Email</label>
