@@ -13,7 +13,7 @@ const authReducer = (state, action) => {
 
 const AuthContext = createContext();
 
-export const AuthContextProvider = (children) => {
+export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
   });

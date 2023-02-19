@@ -26,6 +26,9 @@ header a {
   color: #333;
   text-decoration: none;
 }
+nav a {
+  margin-left: 8px;
+}
 .pages{
   max-width: 1400px;
   padding: 20px;
@@ -82,6 +85,14 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
+}
+form { 
+  max-width: 400px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 }
 form button {
   background: var(--primary);
