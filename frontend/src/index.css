@@ -29,6 +29,19 @@ header a {
 nav a {
   margin-left: 8px;
 }
+nav button {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer
+}
+
+nav button:hover {
+  background-color: var(--primary);
+  color: white
+}
 .pages{
   max-width: 1400px;
   padding: 20px;
