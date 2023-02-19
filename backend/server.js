@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./connectDB');
 const workoutRoutes = require('./routes/workoutRoutes');
+const userRoutes = require('./routes/userRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -13,6 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/user', userRoutes);
 
 connectDB();
 
