@@ -19,10 +19,19 @@ const WorkoutDetails = ({ workout }) => {
   return (
     <div className='workout-details'>
       <h4>{workout.title}</h4>
-      <p>Reps: {workout.reps}</p>
-      <p>Load: {workout.load} Kgs</p>
+      <p>
+        <strong>Reps:</strong> {workout.reps}
+      </p>
+      <p>
+        <strong>Load:</strong> {workout.load} Kgs
+      </p>
       <p>{new Date(workout.createdAt).toLocaleString()}</p>
-      <span onClick={() => handleDelete(workout._id)}>delete</span>
+      <span
+        className='material-symbols-outlined'
+        onClick={() => handleDelete(workout._id)}
+      >
+        delete
+      </span>
     </div>
   );
 };
