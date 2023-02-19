@@ -50,6 +50,19 @@ const updateWorkout = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ msg: 'Error: No such id' });
   }
+  const emptyFields = [];
+  if (!req.body.title) {
+    emptyFields.push('title');
+  }
+  if (!req.body.reps) {
+    emptyFields.push('reps');
+  }
+  if (!req.body.load) {
+    emptyFields.push('load');
+  }
+  if (emptyFields.length > 0) {
+    res.status(400).json({ error: 'Please fill in all fields!', emptyFields });
+  }
   const workout = await Workout.findOneAndUpdate(
     { _id: id },
     { ...req.body },
